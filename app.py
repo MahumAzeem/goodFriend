@@ -1,7 +1,9 @@
 import os
 import datetime
 import hashlib
+import sys
 from friend import Friend
+from database import addFriend
 from flask import Flask, session, url_for, redirect, render_template, request, abort, flash
 from werkzeug.utils import secure_filename
 from flask_cors import CORS
@@ -20,13 +22,21 @@ def root():
 def add_friend():
     if request.method == 'POST': #When the add friend button is pressed
         r = request.form
+        print("!!!!!!!!!!!!!!!!!", file=sys.stderr)
+        ##print(r.get('first_name') + r.get('last_name'), file=sys.stderr)
+        
+        birthday = r.get('date')
+        birthday_s = birthday.split('/') ##[mm,dd,yyyy]
+
+
         friend = Friend(
-            first_name=r.get('first_name'), 
-            last_name=r.get('last_name'),
-            birthdate=datetime.date(int(r.get('birthyear')),int(r.get('birthmonth')),int(r.get('birthday')))
-            # birthdate=datetime.date(request.form.get('birthyear'), request.form.get('birthmonth'), request.form.get('birhtday'))
+            name= str(r.get('first_name')) + " " + str(r.get('last_name')), 
+            pronouns = str(r.get('pronouns')),
+            birthdate=datetime.date(int(birthday_s[2]),int(birthday_s[0]),int(birthday_s[1])) #datetime.date takes (yyyy,mm,dd)  
         )
-        return "Friend Added page"
+        f = addFriend()
+        f.add(friend)
+        return str(r.get('date'))
 
     if request.method == 'GET':
         #load page that has the form to add friend
