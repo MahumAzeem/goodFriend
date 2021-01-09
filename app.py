@@ -39,4 +39,3 @@ def load_dashboard():
     # upcoming_events = db.get_upcoming_events(limit=4)
     # return render_template('index.html', user, friends_list, upcoming_events)
     return "Hello " + current_user
-
