@@ -5,11 +5,10 @@ from pydantic import BaseModel
 
 class Friend(BaseModel):
     #id: int
-    first_name: str
-    last_name: str
+    name: str
     birthdate: datetime.date
-    allergies: Optional[List[str]]
-    pronouns: Optional[List[str]]
+    allergies: Optional[str]
+    pronouns: Optional[str]
     avatar: Optional[str]
     optional1: Optional[Dict[str,List[str]]]
     optional2: Optional[Dict[str,List[str]]]
