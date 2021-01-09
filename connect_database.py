@@ -2,7 +2,10 @@ from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
 
 cloud_config= {
-        'secure_connect_bundle': './secure-connect-goodfriend.zip'
+        'secure_connect_bundle': './secure-connect-goodfriend.zip',
+        'init-query-timeout': 10,
+        'connect_timeout': 10,
+        'set-keyspace-timeout': 10
 }
 auth_provider = PlainTextAuthProvider('kanrieb', 'UVICgirls2020')
 cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
