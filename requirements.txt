@@ -1,3 +1,4 @@
 Flask==1.1.2
 Werkzeug==1.0.1
 pydantic==1.7.3
+cassandra-driver==3.24.0
