@@ -14,7 +14,7 @@ class addFriend:
         cql_values = "uuid()"
         optional_counter = 1
 
-        parameters = ["name", "birthdate", "allergies", "pronouns", "avatar", "optional1", "optional2", "optional3", "optional4"]
+        parameters = ["name", "birthdate", "allergies", "phone_number", "pronouns", "avatar", "optional1", "optional2", "optional3", "optional4"]
         for key in Friend:
             if key[1]:
                 information = key[1]
