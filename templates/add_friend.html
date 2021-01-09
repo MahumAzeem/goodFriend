@@ -42,7 +42,7 @@
 
 
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <div class="form-group ">
                         <label class="control-label " for="date">
                             Birthday
@@ -54,18 +54,71 @@
                 <div class="col-md-3 ">
                     <div class="form-group ">
                         <label class="control-label " for="text">
+                            Phone Number
+                        </label>
+                        <input class="form-control" id="text" name="text" placeholder="7781234567"
+                            type="text" />
+                    </div>
+                </div>
+
+                <div class="col-md-4 ">
+                    <div class="form-group ">
+                        <label class="control-label " for="text">
                             Allergies
                         </label>
                         <input class="form-control" id="text" name="text" placeholder="Coconut, dairy, etc"
                             type="text" />
                     </div>
                 </div>
+            </div>
+
+            <label class="control-label ">
+                Extra Categories
+            </label>
+            <div class="row"></div>
+
                 <div class="col-md-3">
                     <div class="form-group ">
-                        <label class="control-label " for="optional1">
-                            Optional1
-                        </label>
-                        <input class="form-control" id="optional1" name="optional1" type="text" />
+                        <input class="form-control" id="optional1-name" name="optional1-name" type="text" placeholder="Category 1" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group ">
+                        <input class="form-control" id="optional2-name" name="optional2-name" type="text" placeholder="Category 2"/>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group ">
+                        <input class="form-control" id="optional3-name" name="optional3-name" type="text" placeholder="Category 3"/>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group ">
+                        <input class="form-control" id="optional4-name" name="optional4-name" type="text" placeholder="Category 4"/>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group ">
+                        <textarea class="form-control" cols="40" id="optional1-text" name="optional1-text" rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group ">
+                        <textarea class="form-control" cols="40" id="optional2-text" name="optional2-text" rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group ">
+                        <textarea class="form-control" cols="40" id="optional3-text" name="optional3-text" rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group ">
+                        <textarea class="form-control" cols="40" id="optional4-text" name="optional4-text" rows="5"></textarea>
                     </div>
                 </div>
 
@@ -85,7 +138,7 @@
             </script>
 
 
-            <div class="row">
+            <div class="row" style="float:right; padding: 20px">
 
                 <button type="submit" class="btn btn-primary">Add Friend</button>
             </div>
