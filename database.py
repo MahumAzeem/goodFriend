@@ -14,11 +14,14 @@ class addFriend:
         for key in Friend:
             if key[1]:
                 information = key[1]
-                if key[0] == 'birthdate':
-                    dts = key[1]
-                    information = dts.strftime('%Y/%m/%d')
-                cql_columns = cql_columns + ", " + key[0]
-                cql_values = cql_values + ", '" + information + "'"
+                if 'optional' in key[0]:
+                    print(information)
+                else:
+                    if key[0] == 'birthdate':
+                        dts = key[1]
+                        information = dts.strftime('%Y/%m/%d')
+                    cql_columns = cql_columns + ", " + key[0]
+                    cql_values = cql_values + ", '" + information + "'"
 
         cql_command = "insert into friend_information (" + cql_columns + ") values ( " + cql_values + ")"
         print(cql_command)
@@ -32,5 +35,5 @@ class addFriend:
 
 
 f = addFriend()
-friend = Friend(name= "stella brown", birthdate= 2000-10-10, allergies="apples", pronouns = "he")
+friend = Friend(name= "stella brown", birthdate= 2000-10-10, allergies="apples", pronouns = "he", optional1 = {"Snacks": "Gummy bears"})
 f.add(friend)
