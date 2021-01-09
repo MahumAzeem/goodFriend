@@ -32,7 +32,13 @@ def add_friend():
         friend = Friend(
             name= str(r.get('first_name')) + " " + str(r.get('last_name')), 
             pronouns = str(r.get('pronouns')),
-            birthdate=datetime.date(int(birthday_s[2]),int(birthday_s[0]),int(birthday_s[1])) #datetime.date takes (yyyy,mm,dd)  
+            birthdate=datetime.date(int(birthday_s[2]),int(birthday_s[0]),int(birthday_s[1])), #datetime.date takes (yyyy,mm,dd)  
+            phone=str(r.get('phone_number')),
+            allergies=str(r.get('allergies')),
+            optional1={str(r.get('optional1-name')):str(r.get('optional1-text'))},
+            optional2={str(r.get('optional2-name')):str(r.get('optional2-text'))},
+            optional3={str(r.get('optional3-name')):str(r.get('optional3-text'))},
+            optional4={str(r.get('optional4-name')):str(r.get('optional4-text'))}
         )
         f = addFriend()
         f.add(friend)
