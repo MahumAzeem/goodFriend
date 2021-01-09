@@ -1,15 +1,21 @@
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
 
+import config
+
 class Database:
     def __init__(self):
+        path = config.DB_PATH
+        user = config.USERNAME
+        password = config.PASSWORD
+
         cloud_config= {
-            'secure_connect_bundle': './secure-connect-goodfriend.zip',
+            'secure_connect_bundle': path,
             'init-query-timeout': 10,
             'connect_timeout': 10,
             'set-keyspace-timeout': 10
         }
-        auth_provider = PlainTextAuthProvider('kanrieb', 'UVICgirls2020')
+        auth_provider = PlainTextAuthProvider(user, password)
         self.cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
         self.session = self.cluster.connect('friends')
     
@@ -27,8 +33,8 @@ class Database:
 
 
 #Using the function
-#newDatabase = Database()
-#newDatabase.execute("insert into friend_information ( id, name, birthday, pronouns, allergies) Values ( uuid(), 'Alice Smith', 1368438171000, 'She/her', 'Peanuts')")
-#newDatabase.close()
+newDatabase = Database()
+newDatabase.execute("insert into friend_information ( id, name, birthday, pronouns, allergies, phone_number) Values ( uuid(), 'Alice Smith', 1368438171000, 'She/her', 'Peanuts', '2501234567')")
+newDatabase.close()
 
 #insert into friend_information ( id, name, birthday, pronouns, allergies, col1_name, col1_info, col2_name, col2_info, col3_name, col3_info, col4_name, col4_info) Values ( uuid(), 'Alice Smith', 1368438171000, 'She/her', 'Peanuts', ...);
