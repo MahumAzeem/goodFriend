@@ -1,0 +1,27 @@
+.grey-outline {
+ /*   width: 620px;
+    height: 600px;*/
+    background: rgba(245,247,245,1);
+    opacity: 1;
+/*    position: relative;
+    top: 0px;
+    left: 0px;*/
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    overflow: hidden;
+  }
+
+  .header {
+    width: 190px;
+    color: rgba(32,58,40,0.9800000190734863);
+    position: absolute;
+    top: 0px;
+    left: 13px;
+    font-family: Baloo Bhai;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+    text-align: left;
+  }

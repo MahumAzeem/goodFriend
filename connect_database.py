@@ -21,12 +21,14 @@ class Database:
     
     def execute(self, command):
         #REVISIT FOR INPUT SANITIZATION
-        row = self.session.execute(command).one()
+        row = self.session.execute(command)
         #if row:
-        #    print(row[0])
+        #    for x in row:
+        #        print(x)
         #else:
         #    print("An error occurred.")
 
     def close(self):
         self.cluster.shutdown()
         self.session.shutdown()
+
