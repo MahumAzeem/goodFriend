@@ -1,7 +1,9 @@
 .grey-outline {
     background: rgba(245,247,245,1);
     opacity: 1;
-
+/*    position: relative;
+    top: 0px;
+    left: 0px;*/
     border-top-left-radius: 14px;
     border-top-right-radius: 14px;
     border-bottom-left-radius: 14px;
