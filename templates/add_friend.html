@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% block body %}
+    {{ super() }}
+
+
+<form>
+    <div class="container-fluid">
+        <form method="post"></form>
+        
+        <div class="row">
+         <div class="col-md-3 ">
+           <div class="form-group ">
+            <label class="control-label " for="first_name">
+             First Name
+            </label>
+            <input class="form-control" id="first_name" name="first_name" type="text"/>
+           </div>
+        </div>
+           <div class="col-md-3">
+           <div class="form-group ">
+            <label class="control-label " for="name1">
+             Last Name
+            </label>
+            <input class="form-control" id="name1" name="name1" type="text"/>
+           </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group ">
+            <label class="control-label " for="pronounds">
+             Pronouns
+            </label>
+            <input class="form-control" id="pronounds" name="pronounds" placeholder="she/her" type="text"/>
+          </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-2">
+            <div class="form-group ">
+                <label class="control-label " for="date">
+                    Birthday
+                   </label>
+                   <input class="form-control" id="date" name="date" type="text"/>
+            </div>
+        </div>
+          
+          <div class="col-md-3 ">
+          <div class="form-group ">
+            <label class="control-label " for="text">
+                Allergies
+               </label>
+               <input class="form-control" id="text" name="text" placeholder="Coconut, dairy, etc" type="text"/>
+          </div>
+       </div>
+        <div class="col-md-3">
+          <div class="form-group ">
+            <label class="control-label " for="optional1">
+                Optional1
+               </label>
+               <input class="form-control" id="optional1" name="optional1" type="text"/>
+        </div>
+       </div>
+       
+   </div>
+
+
+
+
+
+   <script>
+    $(document).ready(function(){
+        var date_input=$('input[name="date"]'); //our date input has the name "date"
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        date_input.datepicker({
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        })
+    })
+</script>
+
+
+
+
+
+
+   <div class="row">
+        
+    <button type="submit" class="btn btn-primary">Add Friend</button>
+    </div>
+</form>
+{% endblock %}

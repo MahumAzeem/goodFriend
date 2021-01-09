@@ -30,7 +30,7 @@ def add_friend():
 
     if request.method == 'GET':
         #load page that has the form to add friend
-        return "Add friend form"
+        return render_template('add_friend.html')
 
 @app.route("/dashboard")
 def load_dashboard():
