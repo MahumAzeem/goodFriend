@@ -139,6 +139,3 @@ class birthdays:
                 counter +=1
         
         return final_info
-
-b = birthdays()
-b.getUpcomingBirthdays()
