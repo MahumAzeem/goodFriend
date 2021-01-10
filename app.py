@@ -18,6 +18,10 @@ def root():
     return render_template('index.html')
 
 
+@app.route("/friend_info")
+def friend_info():
+    return render_template('friend_info.html')
+
 @app.route("/add_friend", methods=['GET', 'POST'])
 def add_friend():
     if request.method == 'POST': #When the add friend button is pressed
