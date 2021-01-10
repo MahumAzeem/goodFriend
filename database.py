@@ -4,6 +4,8 @@ from connect_database import Database
 import datetime
 from cassandra.query import named_tuple_factory
 from datetime import datetime
+from datetime import date
+
 
 class addFriend:
     def add(self, Friend):
@@ -90,3 +92,38 @@ class getFriendFromID:
         )
 
         return(one)
+
+
+#Queries the database for all birthdays, returns 4 of the upcoming ones from today
+class birthdays:
+    def getUpcomingBirthdays(self):
+        def myFunc(e):
+            return e[2]
+
+        info = []
+        today = datetime.today()
+
+        cql_command = "select name, birthdate from friend_information"
+
+        newDatabase = Database()
+        row = newDatabase.executeSelect(cql_command)
+        newDatabase.close()
+
+        if row:
+            for x in row:
+                mini = []
+                mini.append(x.name)
+                dt= datetime.strptime(x.birthdate, '%Y/%m/%d')
+                newtime= dt.replace(year = today.year)
+                mini.append(newtime)
+                d = newtime - today
+                mini.append(d.days)
+                info.append(mini)
+        else:
+            print("An error occurred.")
+        
+        info.sort(key=myFunc)
+        print(info)
+
+b = birthdays()
+b.getUpcomingBirthdays()
