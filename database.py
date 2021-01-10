@@ -22,7 +22,7 @@ class addFriend:
                     info_list = list(information.items())
                     cql_columns = cql_columns + ", col" + str(optional_counter) +"_name, col" + str(optional_counter) +"_info"
                     cql_values = cql_values + ", '" + info_list[0][0] + "', '"+ info_list[0][1] +"'"
-                    optional_counter += optional_counter
+                    optional_counter += 1
                 else:
                     if key[0] == 'birthdate':
                         dts = key[1]
@@ -31,7 +31,7 @@ class addFriend:
                     cql_values = cql_values + ", '" + information + "'"
 
         cql_command = "insert into friend_information (" + cql_columns + ") values ( " + cql_values + ")"
-        #print(cql_command)
+        print(cql_command)
 
         newDatabase = Database()
         newDatabase.execute(cql_command)
