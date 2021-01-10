@@ -21,7 +21,7 @@ def root():
 def friend_info(id):
     i = getFriendFromID()
     friend = i.returnOne(id)
-    return str(friend.name)
+    return render_template('friend_info.html', friend)
 
 @app.route("/add_friend", methods=['GET', 'POST'])
 def add_friend():
