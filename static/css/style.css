@@ -369,6 +369,7 @@ body {
   justify-content: space-between;
   align-items: center;
   border-radius: 1.3em;
+  margin-bottom: 1em;
 }
 
 .friend-list li .intro{
@@ -407,4 +408,13 @@ body {
   font-size: 1.2em;
 }
 
-
+/*-------------------------------------------Friend scrolling---------------------*/
+.container {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+.container::-webkit-scrollbar { /* WebKit */
+  width: 0;
+  height: 0;
+}

@@ -3,7 +3,7 @@ import datetime
 import hashlib
 import sys
 from friend import Friend
-from database import addFriend
+from database import addFriend, getFriend
 from flask import Flask, session, url_for, redirect, render_template, request, abort, flash, jsonify
 from werkzeug.utils import secure_filename
 from flask_cors import CORS
@@ -55,7 +55,7 @@ def load_dashboard():
     friends_list = f.getAllFriends() #scrollable?
     # upcoming_events = db.get_upcoming_events(limit=4)
     # return render_template('index.html', user, friends_list, upcoming_events)
-    return "Hello " + current_user
+    return render_template('index.html')
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
