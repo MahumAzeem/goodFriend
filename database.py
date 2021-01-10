@@ -31,7 +31,7 @@ class addFriend:
                     cql_values = cql_values + ", '" + information + "'"
 
         cql_command = "insert into friend_information (" + cql_columns + ") values ( " + cql_values + ")"
-        print(cql_command)
+        #print(cql_command)
 
         newDatabase = Database()
         newDatabase.execute(cql_command)

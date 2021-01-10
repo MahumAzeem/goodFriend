@@ -22,7 +22,7 @@ def root():
 def add_friend():
     if request.method == 'POST': #When the add friend button is pressed
         r = request.form
-        print("!!!!!!!!!!!!!!!!!", file=sys.stderr)
+        #print("!!!!!!!!!!!!!!!!!", file=sys.stderr)
         ##print(r.get('first_name') + r.get('last_name'), file=sys.stderr)
         
         birthday = r.get('date')

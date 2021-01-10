@@ -7,6 +7,7 @@
     border-bottom-right-radius: 14px;
     overflow: hidden;
     padding: 20px;
+    width: 970px
   }
 
   .header {
@@ -20,4 +21,23 @@
     font-size: 24px;
     opacity: 1;
     text-align: left;
+  }
+
+  .GoodFriendTitle {
+    position: absolute;
+  width: 614px;
+  height: 61px;
+  left: 242px;
+  top: 29px;
+  background: linear-gradient(180deg, rgba(33, 58, 40, 0.98) 14.06%, rgba(70, 71, 70, 0.859375) 44.79%, rgba(255, 255, 255, 0) 100%),
+  linear-gradient(180deg, rgba(95, 203, 125, 0.9604) 69.27%, rgba(0, 0, 0, 0) 100%);
+  
+  border: 1px solid rgba(33, 58, 40, 0.98);
+  font-family: Baloo Bhai;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 65px;
+  line-height: 104px;
+  
+  border: 1px solid rgba(33, 58, 40, 0.98);
   }
