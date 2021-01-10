@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from friend import Friend
 from connect_database import Database
 import datetime
+from cassandra.query import named_tuple_factory
 
 class addFriend:
     def add(self, Friend):
@@ -38,6 +39,23 @@ class addFriend:
         newDatabase.close()
 
 
-#f = addFriend()
-#friend = Friend(name= "stella brown", birthdate= 2000-10-10, allergies="apples", pronouns = "she", optional1 = {"Snacks": "Gummy bears"}, optional2 = {"Interests": "Plants"})
-#f.add(friend)
+#information returned in labeled list format
+#use friend_list[i] to get one person's name, id, pronouns
+#use friend_list[i].id/name/pronouns for just the specific info 
+class getFriend:
+    def getAllFriends(self):
+        friend_list = []
+        cql_command = "select id, name, pronouns from friend_information"
+
+        newDatabase = Database()
+        row = newDatabase.executeSelect(cql_command)
+        newDatabase.close()
+        
+        if row:
+            for x in row:
+                friend_list.append(x)
+        else:
+            print("An error occurred.")
+        
+        return friend_list
+
