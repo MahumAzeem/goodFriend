@@ -1,0 +1,379 @@
+/* Reset Default Margins Applied by browser */
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body {
+    line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+}
+
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color: #ff9;
+    color: #000;
+    text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color: #ff9;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+    border-bottom: 0.6em dotted;
+    cursor: help;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display: block;
+    height: .6em;
+    border: 0;
+    border-top: 0.6em solid #cccccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+input,
+select {
+    vertical-align: middle;
+}
+
+body {
+    font-family: "Baloo Bhai 2";
+}
+
+
+
+.SideBar {
+    box-sizing: border-box;
+    background-color: #213A28;
+    position: fixed;
+    left: 3em;
+    border-radius: 1.5em;
+    height: 95%;
+    margin: 1.25% 0em;
+    box-shadow: .9em .9em 2.5em -.9em rgba(33, 58, 40, .66);
+}
+
+/* Giving the exit icon a place to reference its absolute position from */
+
+.SideBarR {
+    position: relative;
+}
+
+.Logo {
+    padding: 3em 1em 0em 2.1em;
+    max-width: 4em;
+    max-height: 4em;
+    width: auto;
+    height: auto;
+}
+
+.SideBarIconSection {
+    display: block;
+    padding: 1em 2em;
+}
+
+.SideBarIconSection li {
+    padding: 0;
+    text-align: center;
+    list-style-type: none;
+    margin: 3em 0;
+}
+
+.SideBarIconSection img {
+    max-width: 2em;
+    max-height: 2em;
+    width: auto;
+    height: auto;
+}
+
+
+.exit {
+    max-width: 2em;
+    max-height: 2em;
+    width: auto;
+    height: auto;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 auto;
+}
+
+/* About Page */
+
+.fakejack{
+    display: none;
+}
+
+.flex {
+    box-sizing: border-box;
+    width: 90%;
+    margin-left: 13em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub{
+    font-size: 3em;
+    margin-top: 2em;
+    color: #213A28;
+}
+
+.about {
+    margin-top: 3em;
+    width: 50%;
+    margin-right: 4em;
+}
+
+.jack{
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+    border: #C2E9CD solid .8em;
+    margin-right: 1em !important;
+}
+
+.title {
+    color: white;
+    font-size: 4.3em;
+    -webkit-text-stroke: #213A28 .2rem;
+}
+
+
+.about ul li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #F5F7F5;
+    padding: 1.5em 2em;
+    margin: 1em 0em;
+    border-radius: 1.5em;
+  }
+  
+  ul li h2{
+    font-size: 3em;
+    font-weight: bolder;
+    color:#213A28 ;
+  }
+  
+  ul li p{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+  
+/* Media Queries */
+@media only screen and (max-width: 1400px) {
+    body{
+        font-size: 13px;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 1100px) {
+    .SideBar {
+        left: 2em;
+    }
+
+}
+
+@media only screen and (max-width: 950px) {
+    body {
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .flex{
+        display: block;
+    }
+    .jack{
+        display: none;
+    }
+
+    .sub{
+        margin-top: 0em;
+       
+    }
+
+    .fakejack{
+        display: block;
+        width: 10m;
+        height: 10em;
+        border-radius: 50%;
+        border: #C2E9CD solid .8em;
+        margin: 5em auto 0;
+    }
+    .about{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 10px;
+    }
+    .about{
+        width: 70%;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+
+    .SideBar {
+        left: 0;
+        top: -1em;
+        border-radius: 0;
+        height: 100%;
+    }
+
+
+}
+
+@media only screen and (max-width: 450px) {
+
+    .SideBar {
+        left: 0;
+        top: -1em;
+        border-radius: 0;
+        height: 100%;
+    }
+
+}

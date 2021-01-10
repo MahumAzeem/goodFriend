@@ -2,55 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/Friend_Icon_cropped.png') }}">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.united.css') }}">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-
 
     <!-- Bootstrap Date-Picker Plugin -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="/static/css/add_friend.css">
     <link rel="stylesheet" href="/static/css/style.css">
-    <title>Document</title>
+
+    <title>GoodFriend - Add Friend</title>
 </head>
 <body>
 
-    <div class="SideBar">
-      <div class="SideBarR"></div>
-        <img class="Logo" src= "/static/images/Friend_Icon.png">
-        <li class="SideBarIconSection">
-          <ul><a href=""></a><img src="/static/images/Vector.png" alt=""></ul>
-          <ul><a href=""></a><img src="/static/images/plus.png" alt=""></ul>
-          <ul><a href=""></a><img src="/static/images/Group_2.png" alt=""></ul>
-          <ul><a href=""></a><img src="/static/images/Group_6.png" alt=""></ul>
-        </li>
-        <img class="exit" src="/static/images/Group_7.png" alt="">
-      </div>
+    <div class="Grid">
+        <div class="SideBar">
+          <div class="SideBarR"></div>
+          <img class="Logo" style="padding: 3em 1em 0em 2.1em;
+          max-width: 7em;
+          max-height: 7em;
+          width: auto;
+          height: auto;" src="/static/images/Friend_Icon.png" alt="">
+          <ul class="SideBarIconSection">
+            <li><a href="/dashboard"><img src="/static/images/Vector.png" alt=""></a></li>
+            <li><a href="/add_friend"><img src="/static/images/plus.png" alt=""></a></li>
+            <li><a href=""></a><img src="/static/images/Group_2.png" alt=""></li>
+            <li><a href=""></a><img src="/static/images/Group_6.png" alt=""></li>
+          </ul>
+          <img class="exit" src="/static/images/Group_7.png" alt="">
+        </div>
+    
+    
+    
+        <div class="left header">
+          <h1 class="title" style="font-weight: bold;">Good Friend</h1>
+        </div>
+    
+        
+    </div>
      
-      
 
-      <div class="grey-outline container">
+      <span class="h" >Add Friend</span>
+
+    <br><br><br><br>
+      <div class="grey-outline container" >
           <div class="container-fluid">
-            <label >Add Friend</span>
               <form method="post">
       
                   <div class="row">
                       <div class="col-md-3 ">
                           <div class="form-group ">
                               <label class="control-label " for="first_name">
-                                  First Name
+                                  First Name *
                               </label>
-                              <input class="form-control" id="first_name" name="first_name" type="text" />
+                              <input class="form-control" id="first_name" name="first_name" type="text" required/>
                           </div>
                       </div>
                       <div class="col-md-3">
                           <div class="form-group ">
-                              <label class="control-label " for="name1">
-                                  Last Name
+                              <label class="control-label " for="last_name">
+                                  Last Name *
                               </label>
-                              <input class="form-control" id="name1" name="name1" type="text" />
+                              <input class="form-control" id="last_name" name="last_name" type="text" required/>
                           </div>
                       </div>
                       <div class="col-md-2">
@@ -68,9 +90,9 @@
                       <div class="col-md-3">
                           <div class="form-group ">
                               <label class="control-label " for="date">
-                                  Birthday
+                                  Birthday *
                               </label>
-                              <input class="form-control" id="date" name="date" type="text" />
+                              <input class="form-control" id="date" name="date" type="text" required/>
                           </div>
                       </div>
       
@@ -94,7 +116,7 @@
                           </div>
                       </div>
                   </div>
-      
+                <br>
                   <label class="control-label ">
                       Extra Categories
                   </label>
@@ -162,8 +184,9 @@
       
       
                   <div class="row" style="float:right; padding: 20px">
-      
+                    <a href= "/dashboard">
                       <button type="submit" class="btn btn-primary">Add Friend</button>
+                    </a>
                   </div>
               </form>
       

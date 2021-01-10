@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/Friend_Icon_cropped.png') }}">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/friend.css">
+    <title>Document</title>
+</head>
+
+<body>
+        <div class="SideBar">
+            <div class="SideBarR"></div>
+            <img class="Logo" src="/static/images/Friend_Icon.png" alt="">
+            <ul class="SideBarIconSection">
+                <li><a href="/dashboard"><img src="/static/images/Vector.png" alt=""></a></li>
+                <li><a href="/add_friend"><img src="/static/images/plus.png" alt=""></a></li>
+                <li><a href=""><img src="/static/images/Group_2.png" alt=""></a></li>
+                <li><a href=""><img src="/static/images/Group_6.png" alt=""></a></li>
+            </ul>
+            <img class="exit" src="/static/images/Group_7.png" alt="">
+        </div>
+
+    <div class="flex">
+        <div class="about">
+            {% if friend%}
+            <h1 class="title">{{friend.name}}</h1>
+            <img class="fakejack" src="/static/images/Jack_1.png" alt="">
+            <h2 class="sub">About</h2>
+            <ul>
+                <li>
+                    <h2>Pronouns</h2>
+                    <P>{{friend.pronouns}}</P>
+                </li>
+                <li>
+                    <h2>Allergies</h2>
+                    <P>{{friend.allergies}}</P>
+                </li>
+                <li>
+                    <h2>Birthday</h2>
+                    <P>{{friend.birthdate}}</P>
+                </li>
+                <li>
+                    <h2>Phone</h2>
+                    <P>{{friend.phone_number}}</P>
+                </li>
+                
+                <!-- <li>
+                    
+                    <h2>{{friend.optional1.keys()}}</h2>
+                    <P></P>
+                    
+                </li> -->
+                
+            </ul>
+        </div>
+        <div>
+        <img class="jack" src="/static/images/Jack_1.png" alt="">
+        {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>

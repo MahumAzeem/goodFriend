@@ -1,42 +1,633 @@
-body{
+/* Reset Default Margins Applied by browser */
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
-  padding: 0mm;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
 
-.SideBar{
-    box-sizing: border-box;
-    background-color: #213A28;
-    position: fixed;
-    left: 3em;
-    border-radius: 1.5em;
-    height: 95%;
-    margin: 1.25% 0em;
-    box-shadow: 15px 15px 30px -15px rgba(33,58,40,1);
+body {
+  line-height: 1;
 }
 
-.SideBarR{
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 0.6em dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: .6em;
+  border: 0;
+  border-top: 0.6em solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+body {
+  font-family: "Baloo Bhai 2";
+}
+
+
+.Grid {
+  display: grid;
+  grid-template-columns: 10% 35% 35%;
+  grid-gap: 4%;
+}
+
+.top{
+  display: none;
+}
+
+/* -------------------------------- Side Bar Start -------------------------------- */
+
+
+.SideBar {
+  grid-column: 1 / 3;
+  box-sizing: border-box;
+  background-color: #213A28;
+  position: fixed;
+  left: 3em;
+  border-radius: 1.5em;
+  height: 95%;
+  margin: 1.25% 0em;
+  box-shadow: .9em .9em 2.5em -.9em rgba(33, 58, 40, .66);
+}
+
+/* Giving the exit icon a place to reference its absolute position from */
+
+.SideBarR {
   position: relative;
 }
 
 .Logo {
   padding: 3em 1em 0em 2.1em;
+  max-width: 4em;
+  max-height: 4em;
+  width: auto;
+  height: auto;
 }
 
-.SideBarIconSection{
+.SideBarIconSection {
   display: block;
   padding: 1em 2em;
 }
 
-.SideBarIconSection ul{
+.SideBarIconSection li {
   padding: 0;
   text-align: center;
-  list-style: inside;
+  list-style-type: none;
   margin: 3em 0;
 }
 
+.SideBarIconSection img {
+    max-width: 2em;
+    max-height: 2em;
+    width: auto;
+    height: auto;
+}
+
+
 .exit {
+  max-width: 2em;
+  max-height: 2em;
+  width: auto;
+  height: auto;
   position: absolute;
   bottom: 5%;
-  left: calc(50% - 27px/2);
+  left: 50%;
+  transform: translateX(-50%);
   padding: 0 auto;
 }
+
+/* -------------------------------- Side Bar Ends -------------------------------- */
+
+/* -------------------------------- Header Starts -------------------------------- */
+
+/*Grid Are Defined */
+
+.left {
+  grid-column: 2 / 1 span;
+}
+
+.right {
+  grid-column: 3 / 1 span;
+}
+
+.S-flex {
+  display: flex;
+  margin-top: 1.5em;
+}
+
+.SBar {
+  background-color: #F5F7F5;
+  width: 20em;
+  border-radius: 1em;
+  position: relative;
+  margin-right: 2em;
+  border: none;
+}
+
+
+.SBar img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: .5em;
+}
+
+.header {
+  margin-top: 2em;
+}
+
+.title {
+  color: #49885A;
+  font-size: 4.3em;
+  -webkit-text-stroke: #213A28 .18rem;
+}
+
+.SBar-Icons img {
+  padding: 0 1em;
+  vertical-align: middle;
+}
+
+/* -------------------------------- Header Ends -------------------------------- */
+
+/* -------------------------------- Hero Starts -------------------------------- */
+
+.hero{
+  background-color: #F5F7F5;
+  border-radius: 1em;
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2em;
+}
+
+.hero .text{
+  margin: auto 0;
+}
+
+.hero .text h1{
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.hero .text h2{
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.hero img{
+  max-width: 15em;
+  max-height: 15em;
+  width: auto;
+  height: auto;
+}
+
+/* -------------------------------- Hero Ends -------------------------------- */
+
+/* -------------------------------- Friend List Start -------------------------------- */
+
+.friend {
+  margin-top: 2em;
+}
+
+.friend-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.friends-t{
+  font-size: 2em;
+  color: #213A28;
+}
+
+.friend div ul {
+  display: flex;
+}
+
+.friend div ul li {
+  list-style-type: none;
+  padding: 0 2em 0 0;
+  margin-top: 1em;
+  font-weight: 900;
+  font-size: 1.2em;
+  color: #213A28;
+  opacity: .5;
+}
+
+.friend div ul .selected {
+  opacity: 1;
+}
+
+.add-friend-box {
+  background-color: #213A28;
+  width: 16em;
+  position: relative;
+  border-radius: 1em;
+}
+
+.add-t{
+  color: #ffffff;
+  margin: auto auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.3em;
+}
+
+.add-t span{
+  font-size: 3em;
+  vertical-align: middle;
+  margin-right: .5em;
+}
+
+.friend-list{
+  list-style-type: none;
+}
+
+.friend-list li {
+  display: flex;
+  background-color: #F5F7F5;
+  padding: 1em;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1.3em;
+  margin: 1em;
+}
+
+.friend-list li .intro{
+  display: flex;
+  align-items: center;
+}
+
+.friend-list li .intro .profile {
+  float: left;
+  background-color: white;
+  width: 5em;
+  height: 5em;
+  border-radius: 1em;
+  margin-right: 2em;
+}
+
+.friend-list li .intro .person h1 {
+  color: #213A28;
+  font-size: 1.2em;
+  margin-bottom: .5em;
+}
+
+.friend-list li .intro .person h2 {
+  font-weight: 500;
+  color: #213A28;
+}
+
+.friend-list li  .more-intro{
+  background-color: #213A28;
+  padding: 1em 2em;
+  border-radius: .7em;
+}
+
+.friend-list li  .more-intro .details{
+  color: #ffffff;
+  font-size: 1.2em;
+}
+
+
+/* -------------------------------- Friend List Ends -------------------------------- */
+
+
+/* -------------------------------- Events & Premium Start -------------------------------- */
+
+.Sub-title{
+  margin-top: 4em;
+  font-size: 2em;
+  color: #213A28;
+  margin-bottom: 1em;
+}
+
+.calender li{
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #F5F7F5;
+  padding: 2em 3em;
+  margin: 1em 0em;
+  border-radius: 1.5em;
+}
+
+.calender li .date{
+  font-size: 3em;
+  font-weight: bolder;
+
+  color:#213A28 ;
+}
+
+.calender li .description{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 45%;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+/* -------------------------------- Events & Premium End -------------------------------- */
+
+
+
+@media only screen and (max-width: 1600px){
+  body{
+    font-size: 14px;
+    grid-template-columns: 10% 35% 40%;
+  }
+}
+
+@media only screen and (max-width: 1400px){
+  body{
+    font-size: 12px;
+  }
+  .Grid {
+
+    grid-template-columns: 10% 40% 35%;
+    grid-gap: 7%;
+    
+  }
+
+}
+
+@media only screen and (max-width: 1250px){
+  body{
+    font-size: 20px;
+  }
+  .Grid {
+
+    grid-template-columns: 15% 70%;
+    grid-template-rows: 0% auto auto auto;
+    grid-row-gap: 10%;
+    grid-column-gap: 7%;
+  }
+
+  .left {
+    grid-column: 2 / 1 span;
+  }
+  
+  .right {
+    grid-column: 2/ 1 span;
+  }
+  
+  .wrong-top{
+    display: none;
+  }
+
+  .top{
+    display: block;
+    grid-column: 2/ 1 span;
+    grid-row: 2 / 1 span;
+  }
+
+}
+
+@media only screen and (max-width: 1100px){
+  body{
+    font-size: 16px;
+  }
+
+  .Grid {
+    grid-template-columns: 20% 70%;
+    grid-column-gap: 3%;
+  }
+
+  .SideBar{
+    left: 2em;
+  }
+
+  .Sub-title{
+    margin-top: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 970px){
+  body{
+    font-size: 14px;
+  }
+
+  .Grid {
+    grid-template-columns: 20% 70%;
+    grid-column-gap: 3%;
+  }
+
+  .Logo {
+    padding: 3em 0em 0em 1.2em;
+  }
+}
+
+@media only screen and (max-width: 650px){
+  body{
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width: 550px){
+  body{
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 500px){
+  body{
+    font-size: 10px;
+  }
+
+  .SideBar{
+    left: 0;
+    top: -1em;
+    border-radius: 0;
+    height: 100%;
+  }
+
+
+}
+
+@media only screen and (max-width: 450px){
+  body{
+    font-size: 8.5px;
+  }
+
+  .SideBar{
+    left: 0;
+    top: -1em;
+    border-radius: 0;
+    height: 100%;
+  }
+
+  .Grid{
+    grid-column-gap: 0%;
+  }
+ 
+
+}
+
+@media only screen and (max-width: 400px){
+  body{
+    font-size: 7.5px;
+  }
+
+}
+
+/*-------------------------------------------Friend scrolling---------------------*/
+.container {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+.container::-webkit-scrollbar { /* WebKit */
+  width: 0;
+  height: 0;
+}
+

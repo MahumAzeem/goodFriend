@@ -27,6 +27,13 @@ class Database:
         #        print(x)
         #else:
         #    print("An error occurred.")
+    
+    def executeSelect(self, command):
+        row = self.session.execute(command)
+        if row:
+            return row
+        else:
+            print("Select query returned nothing.")
 
     def close(self):
         self.cluster.shutdown()

@@ -3,7 +3,7 @@ import datetime
 import hashlib
 import sys
 from friend import Friend
-from database import addFriend
+from database import addFriend, getFriend, getFriendFromID, birthdays
 from flask import Flask, session, url_for, redirect, render_template, request, abort, flash, jsonify
 from werkzeug.utils import secure_filename
 from flask_cors import CORS
@@ -15,19 +15,27 @@ app.config.from_object('config')
 
 @app.route("/")
 def root():
-    return render_template('index.html')
+    return(redirect(url_for("load_dashboard")))
+
+@app.route("/friend_info,<id>")
+def friend_info(id):
+    i = getFriendFromID()
+    friend = i.returnOne(id)
+    return render_template('friend_info.html', friend=friend)
+
+# @app.route("/friend_info")
+# def friend_info():
+   
+#     return render_template('friend_info.html')
 
 
 @app.route("/add_friend", methods=['GET', 'POST'])
 def add_friend():
     if request.method == 'POST': #When the add friend button is pressed
         r = request.form
-        print("!!!!!!!!!!!!!!!!!", file=sys.stderr)
-        ##print(r.get('first_name') + r.get('last_name'), file=sys.stderr)
         
         birthday = r.get('date')
         birthday_s = birthday.split('/') ##[mm,dd,yyyy]
-
 
         friend = Friend(
             name= str(r.get('first_name')) + " " + str(r.get('last_name')), 
@@ -42,7 +50,7 @@ def add_friend():
         )
         f = addFriend()
         f.add(friend)
-        return str(r.get('date'))
+        return redirect(url_for("load_dashboard"), code=303)
 
     if request.method == 'GET':
         #load page that has the form to add friend
@@ -51,10 +59,11 @@ def add_friend():
 @app.route("/dashboard")
 def load_dashboard():
     current_user = app.config['USER']
-    # friends_list = db.get_friends(limit=100) #scrollable?
-    # upcoming_events = db.get_upcoming_events(limit=4)
-    # return render_template('index.html', user, friends_list, upcoming_events)
-    return "Hello " + current_user
+    f = getFriend()
+    friends_list = f.getAllFriends() 
+    e = birthdays()
+    upcoming_events = e.getUpcomingBirthdays()
+    return render_template('index.html', friends= friends_list, birthdays=upcoming_events)
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
