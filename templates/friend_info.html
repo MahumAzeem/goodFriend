@@ -1,57 +1,66 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
-        <link rel="preconnect" href="https://fonts.gstatic.com">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
-        <link href="/static/css/friend_info.css" rel="stylesheet" />
-        <link rel="stylesheet" href="/static/css/style.css">
-        <title>Document</title>
-    </head>
-    <body>
-      <div class="left header">
-        <h1 class="title">Jack Sparrow</h1>
-      </div> 
-      
-      <div class="v123_1">
-        <img src="/static/images/jack.jpg">
-      </div>
-        <div class="v1132_68">
-            <span class="v1132_82">About</span>
-            <div class="v1132_83">
-                <div class="v1132_84">
-                    <div class="v1132_85"></div>
-                    <div class="v1132_86"><span class="v1132_87">He/him</span><span class="v1132_88">Pronouns</span></div>
-                </div>
-            </div>
-            <div class="v1132_89">
-                <div class="v1132_90">
-                    <div class="v1132_91"></div>
-                    <div class="v1132_92"><span class="v1132_93">gluten free, dairy free</span><span class="v1132_94">Allergies</span></div>
-                </div>
-            </div>
-            <div class="v1132_95">
-                <div class="v1132_96">
-                    <div class="v1132_97"></div>
-                    <div class="v1132_98"><span class="v1132_99">Jan 1, 1997</span><span class="v1132_100">Birthday</span></div>
-                </div>
-            </div>
-            <div class="v1132_158">
-                <div class="v1132_159">
-                    <div class="v1132_160"></div>
-                    <div class="v1132_161"><span class="v1132_162">257 567 7575</span><span class="v1132_163">Phone </span></div>
-                </div>
-            </div>
-            <div class="v1132_152">
-                <div class="v1132_153">
-                    <div class="v1132_154"></div>
-                    <div class="v1132_155"><span class="v1132_156">LIke rum</span><span class="v1132_157">Other</span></div>
-                </div>
-            </div>
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/friend.css">
+    <title>Document</title>
+</head>
+
+<body>
+        <div class="SideBar">
+            <div class="SideBarR"></div>
+            <img class="Logo" src="/static/images/Friend_Icon.png" alt="">
+            <ul class="SideBarIconSection">
+                <li><a href="/dashboard"><img src="/static/images/Vector.png" alt=""></a></li>
+                <li><a href="/add_friend"><img src="/static/images/plus.png" alt=""></a></li>
+                <li><a href=""><img src="/static/images/Group_2.png" alt=""></a></li>
+                <li><a href=""><img src="/static/images/Group_6.png" alt=""></a></li>
+            </ul>
+            <img class="exit" src="/static/images/Group_7.png" alt="">
         </div>
 
-        
-    </body>
+    <div class="flex">
+        <div class="about">
+            {% for friend%}
+            <h1 class="title">{{friend.name}}</h1>
+            <img class="fakejack" src="/static/images/Jack_1.png" alt="">
+            <h2 class="sub">About</h2>
+            <ul>
+                <li>
+                    <h2>Pronouns</h2>
+                    <P>{{friend.pronouns}}</P>
+                </li>
+                <li>
+                    <h2>Allergies</h2>
+                    <P>{{friend.allergies}}</P>
+                </li>
+                <li>
+                    <h2>Birthday</h2>
+                    <P>{{friend.birthdate}}</P>
+                </li>
+                <li>
+                    <h2>Phone</h2>
+                    <P>{{friend.phone_number}}</P>
+                </li>
+                <li>
+                    <!-- {{if friend.optional1}}
+
+                    <h2>{{friend.optional1}}</h2>
+                    <P>Like rum</P> -->
+                </li>
+                
+            </ul>
+        </div>
+        <div>
+        <img class="jack" src="/static/images/Jack_1.png" alt="">
+        {%end for%}
+        </div>
+    </div>
+</body>
+
 </html>
