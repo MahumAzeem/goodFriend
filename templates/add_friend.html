@@ -19,17 +19,35 @@
 </head>
 <body>
 
-    <div class="SideBar">
-      <div class="SideBarR"></div>
-        <img class="Logo" src= "/static/images/Friend_Icon.png">
-        <li class="SideBarIconSection">
-          <ul><a href=""></a><img src="/static/images/Vector.png" alt=""></ul>
-          <ul><a href=""></a><img src="/static/images/plus.png" alt=""></ul>
-          <ul><a href=""></a><img src="/static/images/Group_2.png" alt=""></ul>
-          <ul><a href=""></a><img src="/static/images/Group_6.png" alt=""></ul>
-        </li>
-        <img class="exit" src="/static/images/Group_7.png" alt="">
-      </div>
+    <div class="Grid">
+        <div class="SideBar">
+          <div class="SideBarR"></div>
+          <img class="Logo" src="/static/images/Friend_Icon.png" alt="">
+          <ul class="SideBarIconSection">
+            <li><a href="/dashboard"><img src="/static/images/Vector.png" alt=""></a></li>
+            <li><a href="/add_friend"><img src="/static/images/plus.png" alt=""></a></li>
+            <li><a href=""></a><img src="/static/images/Group_2.png" alt=""></li>
+            <li><a href=""></a><img src="/static/images/Group_6.png" alt=""></li>
+          </ul>
+          <img class="exit" src="/static/images/Group_7.png" alt="">
+        </div>
+    
+    
+    
+        <div class="left header">
+          <h1 class="title">Good Friend</h1>
+        </div>
+    
+        <div class="right header">
+          <div class="S-flex">
+            <div class="SBar"><img src="/static/images/Group_35.png" alt=""></div>
+            <div class="SBar-Icons">
+              <img src="/static/images/Notification.png" alt="">
+              <img src="/static/images/ProfilePicture.png" alt="">
+            </div>
+          </div>
+        </div>
+    </div>
      
 
       <span class="h" >
@@ -44,17 +62,17 @@
                       <div class="col-md-3 ">
                           <div class="form-group ">
                               <label class="control-label " for="first_name">
-                                  First Name
+                                  First Name *
                               </label>
-                              <input class="form-control" id="first_name" name="first_name" type="text" />
+                              <input class="form-control" id="first_name" name="first_name" type="text" required/>
                           </div>
                       </div>
                       <div class="col-md-3">
                           <div class="form-group ">
                               <label class="control-label " for="last_name">
-                                  Last Name
+                                  Last Name *
                               </label>
-                              <input class="form-control" id="last_name" name="last_name" type="text" />
+                              <input class="form-control" id="last_name" name="last_name" type="text" required/>
                           </div>
                       </div>
                       <div class="col-md-2">
@@ -72,9 +90,9 @@
                       <div class="col-md-3">
                           <div class="form-group ">
                               <label class="control-label " for="date">
-                                  Birthday
+                                  Birthday *
                               </label>
-                              <input class="form-control" id="date" name="date" type="text" />
+                              <input class="form-control" id="date" name="date" type="text" required/>
                           </div>
                       </div>
       
