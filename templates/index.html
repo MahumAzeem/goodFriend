@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/style.css">
-  <title>GoodFriend - Dashboard</title>
+  <link rel="stylesheet" href="static/css/style.css">
+  <title>Document</title>
 </head>
 
 <body>
@@ -33,15 +33,16 @@
       <h1 class="title">Good Friend</h1>
     </div>
 
-    <div class="right header">
-      <div class="S-flex">
-        <div class="SBar"><img src="/static/images/Group_35.png" alt=""></div>
-        <div class="SBar-Icons">
-          <img src="/static/images/Notification.png" alt="">
-          <img src="/static/images/ProfilePicture.png" alt="">
+    <div class="top">
+      <div class="hero">
+        <div class="text">
+          <h1>Hello Josh !</h1>
+          <h2>It's Good to see you again !</h2>
         </div>
+        <img src="/static/images/Illustration.png" alt="">
       </div>
     </div>
+    
 
     <div class="left">
       <div class="friend">
@@ -64,7 +65,7 @@
       <!-- When using the backend to add friends to the list add list items (Keyword - li) to the unordered list (Keyword - Ul) -->
 
       <ul class="friend-list">
-      {% for id, name, pronouns in friends %}
+        {% for id, name, pronouns in friends %}
         <li><div class="intro" ><div class="profile">
         </div><div class="person"><h1 class="name">{{ name }}</h1><h2 class="pronouns">{{ pronouns}}</h2></div></div>
         <a href= {{ url_for('friend_info', id=id) }}><div class="more-intro"><h1 class="details">View Details</h1></div></a>
@@ -75,18 +76,18 @@
     </div>
 
     <div class="right">
-
-      <div class="hero">
-        <div class="text">
-          <h1>Hello Josh !</h1>
-          <h2>It's Good to see you again !</h2>
+      <div class="wrong-top">
+        <div class="hero">
+          <div class="text">
+            <h1>Hello Josh !</h1>
+            <h2>It's Good to see you again !</h2>
+          </div>
+          <img src="/static/images/Illustration.png" alt="">
         </div>
-        <img src="/static/images/Illustration.png" alt="">
       </div>
-    </div>
+    
 
 
-    <div class="right">
       <h2 class="Sub-title">Upcoming events</h2>
 
       <!-- Another Unordered list use backend to put li items if u want to change the days with backend -->
@@ -105,8 +106,6 @@
           <p class="description">Oprah Winfrey's Birthday</p>
         </li>
       </ul>
-
-
 
     </div>
 
