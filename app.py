@@ -3,7 +3,7 @@ import datetime
 import hashlib
 import sys
 from friend import Friend
-from database import addFriend, getFriend
+from database import addFriend, getFriend, getFriendFromID
 from flask import Flask, session, url_for, redirect, render_template, request, abort, flash, jsonify
 from werkzeug.utils import secure_filename
 from flask_cors import CORS
@@ -19,8 +19,9 @@ def root():
 
 @app.route("/friend_info,<id>")
 def friend_info(id):
-    
-    return str(id)
+    i = getFriendFromID()
+    friend = i.returnOne(id)
+    return str(friend.name)
 
 @app.route("/add_friend", methods=['GET', 'POST'])
 def add_friend():
