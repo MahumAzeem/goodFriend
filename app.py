@@ -21,7 +21,7 @@ def root():
 def friend_info(id):
     i = getFriendFromID()
     friend = i.returnOne(id)
-    return render_template('friend_info.html', friend)
+    return render_template('friend_info.html', friend=friend)
 
 # @app.route("/friend_info")
 # def friend_info():

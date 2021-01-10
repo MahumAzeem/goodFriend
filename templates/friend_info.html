@@ -26,7 +26,7 @@
 
     <div class="flex">
         <div class="about">
-            {% for friend%}
+            {% if friend%}
             <h1 class="title">{{friend.name}}</h1>
             <img class="fakejack" src="/static/images/Jack_1.png" alt="">
             <h2 class="sub">About</h2>
@@ -47,18 +47,19 @@
                     <h2>Phone</h2>
                     <P>{{friend.phone_number}}</P>
                 </li>
-                <li>
-                    <!-- {{if friend.optional1}}
-
-                    <h2>{{friend.optional1}}</h2>
-                    <P>Like rum</P> -->
-                </li>
+                
+                <!-- <li>
+                    
+                    <h2>{{friend.optional1.keys()}}</h2>
+                    <P></P>
+                    
+                </li> -->
                 
             </ul>
         </div>
         <div>
         <img class="jack" src="/static/images/Jack_1.png" alt="">
-        {%end for%}
+        {% endif %}
         </div>
     </div>
 </body>
