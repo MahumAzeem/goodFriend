@@ -15,12 +15,12 @@ app.config.from_object('config')
 
 @app.route("/")
 def root():
-    return render_template('index.html')
+    return(redirect(url_for("load_dashboard")))
 
-
-@app.route("/friend_info")
-def friend_info():
-    return render_template('friend_info.html')
+@app.route("/friend_info,<id>")
+def friend_info(id):
+    
+    return str(id)
 
 @app.route("/add_friend", methods=['GET', 'POST'])
 def add_friend():

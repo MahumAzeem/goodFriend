@@ -65,8 +65,9 @@
       <ul class="friend-list">
       {% for id, name, pronouns in friends %}
         <li><div class="intro" ><div class="profile">
-        </div><div class="person"><h1 class="name">{{ name }}</h1><h2 class="pronouns">{{ pronouns}}</h2></div></div>
-        <div class="more-intro"><h1 class="details">View Details</h1></div>
+        </div><div class="person"><h1 class="name">{{ id }}</h1><h2 class="pronouns">{{ pronouns}}</h2></div></div>
+        <a href= {{ url_for('friend_info', id=id) }}><div class="more-intro"><h1 class="details">View Details</h1></div></a>
+        
         </li>
       {% endfor %}
       </ul>
