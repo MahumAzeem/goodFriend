@@ -59,7 +59,7 @@ def load_dashboard():
     friends_list = f.getAllFriends() #scrollable?
     # upcoming_events = db.get_upcoming_events(limit=4)
     # return render_template('index.html', user, friends_list, upcoming_events)
-    return render_template('index.html')
+    return render_template('index.html', friends= friends_list)
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
