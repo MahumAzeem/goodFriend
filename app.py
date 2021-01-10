@@ -55,7 +55,8 @@ def add_friend():
 @app.route("/dashboard")
 def load_dashboard():
     current_user = app.config['USER']
-    # friends_list = db.get_friends(limit=100) #scrollable?
+    f = getFriend()
+    friends_list = f.getAllFriends() #scrollable?
     # upcoming_events = db.get_upcoming_events(limit=4)
     # return render_template('index.html', user, friends_list, upcoming_events)
     return "Hello " + current_user
