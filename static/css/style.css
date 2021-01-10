@@ -173,8 +173,8 @@ body {
 
 .Grid {
   display: grid;
-  grid-template-columns: 15% 40% 40%;
-  grid-gap: 2%;
+  grid-template-columns: 10% 35% 40%;
+  grid-gap: 4%;
 }
 
 /* -------------------------------- Side Bar Start -------------------------------- */
@@ -216,7 +216,8 @@ body {
 .exit {
   position: absolute;
   bottom: 5%;
-  left: calc(50% - 27px/2);
+  left: 50%;
+  transform: translateX(-50%);
   padding: 0 auto;
 }
 
@@ -251,7 +252,8 @@ body {
 
 .SBar img {
   position: absolute;
-  top: calc(50% - 11px);
+  top: 50%;
+  transform: translateY(-50%);
   left: .5em;
 }
 
@@ -299,7 +301,7 @@ body {
 
 /* -------------------------------- Hero Ends -------------------------------- */
 
-/* -------------------------------- Friend Start -------------------------------- */
+/* -------------------------------- Friend List Start -------------------------------- */
 
 .friend {
   margin-top: 2em;
@@ -369,7 +371,6 @@ body {
   justify-content: space-between;
   align-items: center;
   border-radius: 1.3em;
-  margin-bottom: 1em;
 }
 
 .friend-list li .intro{
@@ -407,6 +408,46 @@ body {
   color: #ffffff;
   font-size: 1.2em;
 }
+
+
+/* -------------------------------- Friend List Ends -------------------------------- */
+
+
+/* -------------------------------- Events & Premium Start -------------------------------- */
+
+.Sub-title{
+  font-size: 1.6em;
+  color: #213A28;
+  margin-bottom: 1em;
+}
+
+.calender li{
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #F5F7F5;
+  padding: 2em 3em;
+  margin: 1em 0em;
+  border-radius: 1.5em;
+}
+
+.calender li .date{
+  font-size: 3em;
+  font-weight: bolder;
+
+  color:#213A28;
+}
+
+.calender li .description{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 45%;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+/* -------------------------------- Events & Premium End -------------------------------- */
 
 /*-------------------------------------------Friend scrolling---------------------*/
 .container {

@@ -42,18 +42,7 @@
       </div>
     </div>
 
-
-
     <div class="left">
-
-      <div class="hero">
-        <div class="text">
-          <h1>Hello Josh !</h1>
-          <h2>It's Good to see you again !</h2>
-        </div>
-        <img src="/static/images/Illustration.png" alt="">
-      </div>
-
       <div class="friend">
         <div class="friend-flex">
           <div>
@@ -69,24 +58,56 @@
             <a href="/add_friend"><h1 class="add-t"><span>+</span>Add new friend</h1></a>
           </div>
         </div>
-
-        <!-- When using the backend to add friends to the list add list items (Keyword - li) to the unordered list (Keyword - Ul) -->
-
-        <ul class="friend-list">
-          {% for id, name, pronouns in friends %}
-            <li><div class="intro" ><div class="profile">
-                </div><div class="person"><h1 class="name">{{ name }}</h1><h2 class="pronouns">{{ pronouns}}</h2></div></div>
-                <div class="more-intro"><h1 class="details">View Details</h1></div>
-            </li>
-          {% endfor %}
-
-        </ul>
-
       </div>
+
+      <!-- When using the backend to add friends to the list add list items (Keyword - li) to the unordered list (Keyword - Ul) -->
+
+      <ul class="friend-list">
+      {% for id, name, pronouns in friends %}
+        <li><div class="intro" ><div class="profile">
+        </div><div class="person"><h1 class="name">{{ name }}</h1><h2 class="pronouns">{{ pronouns}}</h2></div></div>
+        <div class="more-intro"><h1 class="details">View Details</h1></div>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+
+    <div class="right">
+
+      <div class="hero">
+        <div class="text">
+          <h1>Hello Josh !</h1>
+          <h2>It's Good to see you again !</h2>
+        </div>
+        <img src="/static/images/Illustration.png" alt="">
+      </div>
+    </div>
+
+
+    <div class="right">
+      <h2 class="Sub-title">Upcoming events</h2>
+
+      <!-- Another Unordered list use backend to put li items if u want to change the days with backend -->
+
+      <ul class="calender">
+        <li>
+          <h1 class="date">Jan 5</h1>
+          <p class="description">Alice Smith's Birthday</p>
+        </li>
+        <li>
+          <h1 class="date">Jan 11</h1>
+          <p class="description">Zoom Call with Jack</p>
+        </li>
+        <li>
+          <h1 class="date">Jan 29</h1>
+          <p class="description">Oprah Winfrey's Birthday</p>
+        </li>
+      </ul>
 
 
 
     </div>
+
   </div>
 </body>
 
