@@ -26,12 +26,9 @@ def friend_info():
 def add_friend():
     if request.method == 'POST': #When the add friend button is pressed
         r = request.form
-        #print("!!!!!!!!!!!!!!!!!", file=sys.stderr)
-        ##print(r.get('first_name') + r.get('last_name'), file=sys.stderr)
         
         birthday = r.get('date')
         birthday_s = birthday.split('/') ##[mm,dd,yyyy]
-
 
         friend = Friend(
             name= str(r.get('first_name')) + " " + str(r.get('last_name')), 
@@ -46,7 +43,7 @@ def add_friend():
         )
         f = addFriend()
         f.add(friend)
-        return str(r.get('date'))
+        return redirect(url_for("load_dashboard"), code=303)
 
     if request.method == 'GET':
         #load page that has the form to add friend
