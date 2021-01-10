@@ -134,7 +134,7 @@ class birthdays:
             if z[2] > 0:
                 lol = []
                 lol.append(z[0])
-                lol.append(z[1].strftime("%B %d"))
+                lol.append(z[1].strftime("%b %d"))
                 final_info.append(lol)
                 counter +=1
         
