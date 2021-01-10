@@ -93,18 +93,12 @@
       <!-- Another Unordered list use backend to put li items if u want to change the days with backend -->
 
       <ul class="calender">
+        {% for name,bday in birthdays %}
         <li>
-          <h1 class="date">Jan 5</h1>
-          <p class="description">Alice Smith's Birthday</p>
+          <h1 class="date">{{bday}}</h1>
+          <p class="description">{{name}}'s Birthday</p>
         </li>
-        <li>
-          <h1 class="date">Jan 11</h1>
-          <p class="description">Zoom Call with Jack</p>
-        </li>
-        <li>
-          <h1 class="date">Jan 29</h1>
-          <p class="description">Oprah Winfrey's Birthday</p>
-        </li>
+        {% endfor %}
       </ul>
 
     </div>
