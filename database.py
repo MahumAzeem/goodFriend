@@ -3,6 +3,7 @@ from friend import Friend
 from connect_database import Database
 import datetime
 from cassandra.query import named_tuple_factory
+from datetime import datetime
 
 class addFriend:
     def add(self, Friend):
@@ -59,3 +60,33 @@ class getFriend:
         
         return friend_list
 
+
+#Returns all information about one person as a Friend var
+class getFriendFromID:
+    def returnOne(self, idd):
+        cql_command = "select * from friend_information where id = " + idd
+        info_list = []
+
+        newDatabase = Database()
+        row = newDatabase.executeSelect(cql_command)
+        newDatabase.close()
+
+        if row:
+            for x in row:
+                info_list.append(x)
+        else:
+            print("An error occurred.")
+        
+        one = Friend(
+            name = info_list[0].name,
+            birthdate = datetime.strptime(info_list[0].birthdate, '%Y/%m/%d'),
+            allergies = info_list[0].allergies,
+            pronouns = info_list[0].pronouns,
+            phone_number = info_list[0].phone_number,
+            optional1 = {info_list[0].col1_name: info_list[0].col1_info},
+            optional2 = {info_list[0].col2_name: info_list[0].col2_info},
+            optional3 = {info_list[0].col3_name: info_list[0].col3_info},
+            optional4 = {info_list[0].col4_name: info_list[0].col4_info}
+        )
+
+        return(one)
