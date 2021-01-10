@@ -1,0 +1,42 @@
+body{
+  margin: 0;
+  padding: 0mm;
+}
+
+.SideBar{
+    box-sizing: border-box;
+    background-color: #213A28;
+    position: fixed;
+    left: 3em;
+    border-radius: 1.5em;
+    height: 95%;
+    margin: 1.25% 0em;
+    box-shadow: 15px 15px 30px -15px rgba(33,58,40,1);
+}
+
+.SideBarR{
+  position: relative;
+}
+
+.Logo {
+  padding: 3em 1em 0em 2.1em;
+}
+
+.SideBarIconSection{
+  display: block;
+  padding: 1em 2em;
+}
+
+.SideBarIconSection ul{
+  padding: 0;
+  text-align: center;
+  list-style: inside;
+  margin: 3em 0;
+}
+
+.exit {
+  position: absolute;
+  bottom: 5%;
+  left: calc(50% - 27px/2);
+  padding: 0 auto;
+}

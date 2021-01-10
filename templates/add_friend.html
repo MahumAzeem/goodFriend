@@ -1,149 +1,176 @@
-{% extends "layout.html" %}
-{% block page_title %}
-<link href="/static/css/add_friend.css" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet" />
-{% endblock %}
-
-{% block body %}
-{{ super() }}
-
-<span class="header">Add Friend</span>
-
-<div class="grey-outline">
-    <div class="container-fluid">
-        <form method="post">
-
-            <div class="row">
-                <div class="col-md-3 ">
-                    <div class="form-group ">
-                        <label class="control-label " for="first_name">
-                            First Name
-                        </label>
-                        <input class="form-control" id="first_name" name="first_name" type="text" />
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group ">
-                        <label class="control-label " for="name1">
-                            Last Name
-                        </label>
-                        <input class="form-control" id="name1" name="name1" type="text" />
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="form-group ">
-                        <label class="control-label " for="pronouns">
-                            Pronouns
-                        </label>
-                        <input class="form-control" id="pronouns" name="pronouns" placeholder="she/her" type="text" />
-                    </div>
-                </div>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.united.css') }}">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="form-group ">
-                        <label class="control-label " for="date">
-                            Birthday
-                        </label>
-                        <input class="form-control" id="date" name="date" type="text" />
-                    </div>
-                </div>
 
-                <div class="col-md-3 ">
-                    <div class="form-group ">
-                        <label class="control-label " for="phone_number">
-                            Phone Number
-                        </label>
-                        <input class="form-control" id="phone_number" name="phone_number" placeholder="7781234567"
-                            type="text" />
-                    </div>
-                </div>
+    <!-- Bootstrap Date-Picker Plugin -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
-                <div class="col-md-4 ">
-                    <div class="form-group ">
-                        <label class="control-label " for="allergies">
-                            Allergies
-                        </label>
-                        <input class="form-control" id="allergies" name="allergies" placeholder="Coconut, dairy, etc"
-                            type="text" />
-                    </div>
-                </div>
-            </div>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Document</title>
+</head>
+<body>
 
-            <label class="control-label ">
-                Extra Categories
-            </label>
-            <div class="row">
+    <div class="SideBar">
+      <div class="SideBarR"></div>
+        <img class="Logo" src= "/static/images/Friend_Icon.png">
+        <li class="SideBarIconSection">
+          <ul><a href=""></a><img src="/static/images/Vector.png" alt=""></ul>
+          <ul><a href=""></a><img src="/static/images/plus.png" alt=""></ul>
+          <ul><a href=""></a><img src="/static/images/Group_2.png" alt=""></ul>
+          <ul><a href=""></a><img src="/static/images/Group_6.png" alt=""></ul>
+        </li>
+        <img class="exit" src="/static/images/Group_7.png" alt="">
+      </div>
+     
+      
 
-                <div class="col-md-3">
-                    <div class="form-group ">
-                        <input class="form-control" id="optional1-name" name="optional1-name" type="text" placeholder="Category 1" />
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group ">
-                        <input class="form-control" id="optional2-name" name="optional2-name" type="text" placeholder="Category 2"/>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group ">
-                        <input class="form-control" id="optional3-name" name="optional3-name" type="text" placeholder="Category 3"/>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group ">
-                        <input class="form-control" id="optional4-name" name="optional4-name" type="text" placeholder="Category 4"/>
-                    </div>
-                </div>
+      <div class="grey-outline container">
+          <div class="container-fluid">
+            <label >Add Friend</span>
+              <form method="post">
+      
+                  <div class="row">
+                      <div class="col-md-3 ">
+                          <div class="form-group ">
+                              <label class="control-label " for="first_name">
+                                  First Name
+                              </label>
+                              <input class="form-control" id="first_name" name="first_name" type="text" />
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-group ">
+                              <label class="control-label " for="name1">
+                                  Last Name
+                              </label>
+                              <input class="form-control" id="name1" name="name1" type="text" />
+                          </div>
+                      </div>
+                      <div class="col-md-2">
+                          <div class="form-group ">
+                              <label class="control-label " for="pronouns">
+                                  Pronouns
+                              </label>
+                              <input class="form-control" id="pronouns" name="pronouns" placeholder="she/her" type="text" />
+                          </div>
+                      </div>
+                  </div>
+      
+      
+                  <div class="row">
+                      <div class="col-md-3">
+                          <div class="form-group ">
+                              <label class="control-label " for="date">
+                                  Birthday
+                              </label>
+                              <input class="form-control" id="date" name="date" type="text" />
+                          </div>
+                      </div>
+      
+                      <div class="col-md-3 ">
+                          <div class="form-group ">
+                              <label class="control-label " for="phone_number">
+                                  Phone Number
+                              </label>
+                              <input class="form-control" id="phone_number" name="phone_number" placeholder="7781234567"
+                                  type="text" />
+                          </div>
+                      </div>
+      
+                      <div class="col-md-4 ">
+                          <div class="form-group ">
+                              <label class="control-label " for="allergies">
+                                  Allergies
+                              </label>
+                              <input class="form-control" id="allergies" name="allergies" placeholder="Coconut, dairy, etc"
+                                  type="text" />
+                          </div>
+                      </div>
+                  </div>
+      
+                  <label class="control-label ">
+                      Extra Categories
+                  </label>
+                  <div class="row">
+      
+                      <div class="col-md-3">
+                          <div class="form-group ">
+                              <input class="form-control" id="optional1-name" name="optional1-name" type="text" placeholder="Category 1" />
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-group ">
+                              <input class="form-control" id="optional2-name" name="optional2-name" type="text" placeholder="Category 2"/>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-group ">
+                              <input class="form-control" id="optional3-name" name="optional3-name" type="text" placeholder="Category 3"/>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-group ">
+                              <input class="form-control" id="optional4-name" name="optional4-name" type="text" placeholder="Category 4"/>
+                          </div>
+                      </div>
+      
+                  </div>
+      
+                  <div class="row">
+                      <div class="col-md-3">
+                          <div class="form-group ">
+                              <textarea class="form-control" cols="40" id="optional1-text" name="optional1-text" rows="5"></textarea>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-group ">
+                              <textarea class="form-control" cols="40" id="optional2-text" name="optional2-text" rows="5"></textarea>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-group ">
+                              <textarea class="form-control" cols="40" id="optional3-text" name="optional3-text" rows="5"></textarea>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-group ">
+                              <textarea class="form-control" cols="40" id="optional4-text" name="optional4-text" rows="5"></textarea>
+                          </div>
+                      </div>
+      
+                  </div>
+      
+                  <script>
+                      $(document).ready(function () {
+                          var date_input = $('input[name="date"]'); //our date input has the name "date"
+                          var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+                          date_input.datepicker({
+                              format: 'mm/dd/yyyy',
+                              container: container,
+                              todayHighlight: true,
+                              autoclose: true,
+                          })
+                      })
+                  </script>
+      
+      
+                  <div class="row" style="float:right; padding: 20px">
+      
+                      <button type="submit" class="btn btn-primary">Add Friend</button>
+                  </div>
+              </form>
+      
+          </div>
+      </div>
 
-            </div>
-
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="form-group ">
-                        <textarea class="form-control" cols="40" id="optional1-text" name="optional1-text" rows="5"></textarea>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group ">
-                        <textarea class="form-control" cols="40" id="optional2-text" name="optional2-text" rows="5"></textarea>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group ">
-                        <textarea class="form-control" cols="40" id="optional3-text" name="optional3-text" rows="5"></textarea>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group ">
-                        <textarea class="form-control" cols="40" id="optional4-text" name="optional4-text" rows="5"></textarea>
-                    </div>
-                </div>
-
-            </div>
-
-            <script>
-                $(document).ready(function () {
-                    var date_input = $('input[name="date"]'); //our date input has the name "date"
-                    var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
-                    date_input.datepicker({
-                        format: 'mm/dd/yyyy',
-                        container: container,
-                        todayHighlight: true,
-                        autoclose: true,
-                    })
-                })
-            </script>
+</body>
+</html>
 
 
-            <div class="row" style="float:right; padding: 20px">
-
-                <button type="submit" class="btn btn-primary">Add Friend</button>
-            </div>
-        </form>
-
-    </div>
-</div>
-{% endblock %}
