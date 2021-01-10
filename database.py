@@ -59,10 +59,3 @@ class getFriend:
         
         return friend_list
 
-
-#f = addFriend()
-#friend = Friend(name= "stella brown", birthdate= 2000-10-10, allergies="apples", pronouns = "she", optional1 = {"Snacks": "Gummy bears"}, optional2 = {"Interests": "Plants"})
-#f.add(friend)
-
-f = getFriend()
-f.getAllFriends()
