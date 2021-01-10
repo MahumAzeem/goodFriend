@@ -94,7 +94,8 @@ class getFriendFromID:
         return(one)
 
 
-#Queries the database for all birthdays, returns 4 of the upcoming ones from today
+#Queries the database for all birthdays, returns 4 of the upcoming ones from today.
+#Returns a list of lists in form: [["name", "Month Day"],["name", "Month Day"]] in increasing days away from today
 class birthdays:
     def getUpcomingBirthdays(self):
         def myFunc(e):
@@ -123,7 +124,21 @@ class birthdays:
             print("An error occurred.")
         
         info.sort(key=myFunc)
-        print(info)
+
+        final_info = []
+        counter = 0
+        for z in info:
+            if counter >= 4:
+                return final_info
+
+            if z[2] > 0:
+                lol = []
+                lol.append(z[0])
+                lol.append(z[1].strftime("%B %d"))
+                final_info.append(lol)
+                counter +=1
+        
+        return final_info
 
 b = birthdays()
 b.getUpcomingBirthdays()
